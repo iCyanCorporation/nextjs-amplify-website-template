@@ -10,35 +10,50 @@ This template equips you with a foundational Next.js application integrated with
 
 ### Creating a New Project
 
-```bash
-# Create a new Next.js project
-npx create-next-app@latest my-amplify-app
-cd my-amplify-app
-
-# Initialize Amplify
-npm install aws-amplify
-npx amplify init
-
-# Add authentication
-npx amplify add auth
-```
+Copy this repo
 
 ### Adding UI Components and Styling
 
 This template uses [shadcn/ui](https://ui.shadcn.com/) for beautifully designed components that are easily customizable:
 
 ```bash
-# Add shadcn/ui to your project
-npx shadcn-ui@latest init
+# First, install and set up Tailwind CSS (required for shadcn)
+npm install -D tailwindcss postcss autoprefixer
 
-# Install necessary dependencies for shadcn/ui
-npm install tailwindcss postcss autoprefixer
-npx tailwindcss init -p
+# update tailwind
+https://tailwindcss.com/docs/installation/framework-guides/nextjs
 
-# Optional: Add some commonly used components
-npx shadcn-ui@latest add button
-npx shadcn-ui@latest add card
-npx shadcn-ui@latest add form
+# Create or update your tailwind.config.js to match this:
+# content: [
+#   './pages/**/*.{js,ts,jsx,tsx,mdx}',
+#   './components/**/*.{js,ts,jsx,tsx,mdx}',
+#   './app/**/*.{js,ts,jsx,tsx,mdx}',
+# ],
+
+# Add the Tailwind directives to your CSS
+# Create or edit ./app/globals.css with:
+# @tailwind base;
+# @tailwind components;
+# @tailwind utilities;
+
+# After Tailwind is properly set up, add shadcn/ui
+npx shadcn@latest init
+```
+
+For component installation:
+
+```bash
+# Add commonly used components individually
+npx shadcn@latest add button
+npx shadcn@latest add card
+npx shadcn@latest add form
+```
+
+or
+
+```bash
+# Add all components at once
+npx shadcn@latest add --all
 ```
 
 ### Other Recommended Packages
